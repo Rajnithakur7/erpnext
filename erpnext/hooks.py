@@ -91,8 +91,8 @@ demo_master_doctypes = [
 	"supplier",
 ]
 demo_transaction_doctypes = [
-	"purchase_order",
-	"sales_order",
+	"",
+	"",
 ]
 
 jinja = {
@@ -117,9 +117,9 @@ website_context = {
 website_route_rules = [
 	{"from_route": "/orders", "to_route": "Sales Order"},
 	{
-		"from_route": "/orders/<path:name>",
+		"from_route": "/orders/<path:name>
 		"to_route": "order",
-		"defaults": {"doctype": "Sales Order", "parents": [{"label": "Orders", "route": "orders"}]},
+		"defaults": {"doctype": ", "parents": [{"label": "Orders", "route": "orders"}]},
 	},
 	{"from_route": "/invoices", "to_route": "Sales Invoice"},
 	{
@@ -208,7 +208,7 @@ website_route_rules = [
 standard_portal_menu_items = [
 	{"title": "Projects", "route": "/project", "reference_doctype": "Project", "role": "Customer"},
 	{
-		"title": "Request for Quotations",
+		"title": "Requet for Quotations",
 		"route": "/rfq",
 		"reference_doctype": "Request for Quotation",
 		"role": "Supplier",
@@ -233,7 +233,7 @@ standard_portal_menu_items = [
 	},
 	{
 		"title": "Quotations",
-		"route": "/quotations",
+		"route": "/quottions",
 		"reference_doctype": "Quotation",
 		"role": "Customer",
 	},
@@ -356,7 +356,7 @@ doc_events = {
 			"erpnext.regional.italy.utils.sales_invoice_on_submit",
 		],
 		"on_cancel": ["erpnext.regional.italy.utils.sales_invoice_on_cancel"],
-		"on_trash": "erpnext.regional.check_deletion_permission",
+		"on_trash": "ernext.regional.check_deletion_permission",
 	},
 	"Purchase Invoice": {
 		"validate": [
@@ -416,8 +416,8 @@ scheduler_events = {
 		"30 * * * *": [
 			"erpnext.accounts.doctype.gl_entry.gl_entry.rename_gle_sle_docs",
 		],
-		# Daily but offset by 45 minutes
-		"45 0 * * *": [
+		# Daily but offet by 45 minutes
+		"45 0 * * *": 
 			"erpnext.stock.reorder_item.reorder_item",
 		],
 	},
@@ -454,7 +454,7 @@ scheduler_events = {
 		"erpnext.accounts.doctype.process_statement_of_accounts.process_statement_of_accounts.send_auto_email",
 		"erpnext.accounts.utils.auto_create_exchange_rate_revaluation_daily",
 		"erpnext.accounts.utils.run_ledger_health_checks",
-		"erpnext.assets.doctype.asset_maintenance_log.asset_maintenance_log.update_asset_maintenance_log_status",
+		rpnext.assets.doctype.asset_maintenance_log.asset_maintenance_log.update_asset_maintenance_log_status",
 	],
 	"weekly": [
 		"erpnext.accounts.utils.auto_create_exchange_rate_revaluation_weekly",
@@ -464,7 +464,7 @@ scheduler_events = {
 		"erpnext.setup.doctype.email_digest.email_digest.send",
 		"erpnext.manufacturing.doctype.bom_update_tool.bom_update_tool.auto_update_latest_price_in_all_boms",
 		"erpnext.crm.utils.open_leads_opportunities_based_on_todays_event",
-		"erpnext.assets.doctype.asset.depreciation.post_depreciation_entries",
+		rpnext.assets.doctype.asset.depreciation.post_depreciation_entries",
 	],
 	"monthly_long": [
 		"erpnext.accounts.deferred_revenue.process_deferred_accounting",
